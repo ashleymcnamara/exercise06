@@ -5,6 +5,7 @@ f = open('twain.txt')
 
 #read the file and store in "wholefile" variable. it's a string!
 wholefile = f.read()
+wholefile = wholefile.lower()
 
 #replace dashes with whitespace, so we can split the string properly. text uses --
 # between two words. strip() only removes punctuation from beginning and end.
@@ -33,16 +34,11 @@ for word in split_file:
     else:
         words[stripped_word] += 1
 
-print words
-    
+for key, value in words.iteritems():
+    print "%r, %r" % (key, value)
+#working on extra credit, sorting by values    
+sorted_values = {}
 
-
- 
-
-#count how many times word appears in file
-#word is defined as space-separated
-
-
-#then we print counts to the screen as pair, with the value and number of times 
-#it occurs
+print sorted(words.values())
+print words.keys()
 
